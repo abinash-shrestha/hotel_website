@@ -21,59 +21,56 @@
 
   <div class="my-5 px-4">
     <h2 class="fw-bold h-font text-center">ABOUT US</h2>
-    <div class="h-line bg-dark"></div>
+    <!-- <div class="h-line bg-dark"></div> -->
     <p class="text-center mt-3">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Temporibus incidunt odio quos <br> dolore commodi repudiandae
-      tenetur consequuntur et similique asperiores.
+    At RR Boys Hostel, we pride ourselves on providing a safe and welcoming environment for our residents.
+    <!-- <br>With a focus on excellence in hospitality, we strive to ensure your stay with us is memorable and enjoyable. -->
     </p>
   </div>
 
   <div class="container">
     <div class="row justify-content-between align-items-center">
       <div class="col-lg-6 col-md-5 mb-4 order-lg-1 order-md-1 order-2">
-        <h3 class="mb-3">Lorem ipsum dolor sit</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Omnis minima sapiente aliquam sed officia nostrum fuga?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Omnis minima sapiente aliquam sed officia nostrum fuga?
+        <h3 class="mb-3">Where Quality Meets Excellence</h3>
+        <p style="text-align: justify; text-justify: inter-word;">
+        "Founded in November 17, 2023, RR Boys Hostel stands as a beacon of hospitality in Butwal. With a commitment to excellence since our inception, we have been dedicated to providing a safe and welcoming environment for all our residents. 
+        <br>Our goal is to ensure your stay with us is comfortable and memorable, offering top-notch amenities and attentive service throughout your time at RR Boys Hostel."
         </p>
       </div>
       <div class="col-lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order-1">
-        <img src="images/about/about.jpg" class="w-100">
+        <img src="images/about/hostel.jpeg" class="w-100">
       </div>
     </div>
   </div>
 
-  <div class="container mt-5">
+  <!-- <div class="container mt-5 ">
     <div class="row">
       <div class="col-lg-3 col-md-6 mb-4 px-4">
         <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
           <img src="images/about/hotel.svg" width="70px">
-          <h4 class="mt-3">100+ ROOMS</h4>
+          <h4 class="mt-3">10+ ROOMS</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mb-4 px-4">
         <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
           <img src="images/about/customers.svg" width="70px">
-          <h4 class="mt-3">200+ CUSTOMERS</h4>
+          <h4 class="mt-3">50+ CUSTOMERS</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mb-4 px-4">
         <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
           <img src="images/about/rating.svg" width="70px">
-          <h4 class="mt-3">150+ REVIEWS</h4>
+          <h4 class="mt-3">50+ REVIEWS</h4>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mb-4 px-4">
         <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
           <img src="images/about/staff.svg" width="70px">
-          <h4 class="mt-3">200+ STAFFS</h4>
+          <h4 class="mt-3">2+ STAFFS</h4>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 

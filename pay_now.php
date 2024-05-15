@@ -6,7 +6,7 @@ require('admin/inc/essentials.php');
 require('inc/paytm/config_paytm.php');
 require('inc/paytm/encdec_paytm.php');
 
-date_default_timezone_set("Asia/Kolkata");
+date_default_timezone_set("Asia/Kathmandu");
 
 session_start();
 
