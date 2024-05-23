@@ -3,8 +3,8 @@
 require('admin/inc/db_config.php');
 require('admin/inc/essentials.php');
 
-require('inc/paytm/config_paytm.php');
-require('inc/paytm/encdec_paytm.php');
+// require('inc/paytm/config_paytm.php');
+// require('inc/paytm/encdec_paytm.php');
 
 date_default_timezone_set("Asia/Kathmandu");
 
@@ -23,26 +23,26 @@ if (isset($_POST['pay_now'])) {
 
   $ORDER_ID = 'ORD_' . $_SESSION['uId'] . random_int(11111, 9999999);
   $CUST_ID = $_SESSION['uId'];
-  $INDUSTRY_TYPE_ID = INDUSTRY_TYPE_ID;
-  $CHANNEL_ID = CHANNEL_ID;
+  // $INDUSTRY_TYPE_ID = INDUSTRY_TYPE_ID;
+  // $CHANNEL_ID = CHANNEL_ID;
   $TXN_AMOUNT = $_SESSION['room']['payment'];
 
 
   // Create an array having all required parameters for creating checksum.
 
   $paramList = array();
-  $paramList["MID"] = PAYTM_MERCHANT_MID;
+  // $paramList["MID"] = PAYTM_MERCHANT_MID;
   $paramList["ORDER_ID"] = $ORDER_ID;
   $paramList["CUST_ID"] = $CUST_ID;
   $paramList["INDUSTRY_TYPE_ID"] = $INDUSTRY_TYPE_ID;
   $paramList["CHANNEL_ID"] = $CHANNEL_ID;
   $paramList["TXN_AMOUNT"] = $TXN_AMOUNT;
-  $paramList["WEBSITE"] = PAYTM_MERCHANT_WEBSITE;
-  $paramList["CALLBACK_URL"] = CALLBACK_URL;
+  // $paramList["WEBSITE"] = PAYTM_MERCHANT_WEBSITE;
+  // $paramList["CALLBACK_URL"] = CALLBACK_URL;
 
 
-  //Here checksum string will return by getChecksumFromArray() function.
-  $checkSum = getChecksumFromArray($paramList, PAYTM_MERCHANT_KEY);
+  // Here checksum string will return by getChecksumFromArray() function.
+  // $checkSum = getChecksumFromArray($paramList, PAYTM_MERCHANT_KEY);
 
   // Insert payment data into database
 
@@ -78,7 +78,7 @@ if (isset($_POST['pay_now'])) {
 
   <h1>Please do not refresh this page...</h1>
 
-  <form method="post" action="<?php echo PAYTM_TXN_URL ?>" name="f1">
+  <form method="post" action="<?php // echo PAYTM_TXN_URL ?>" name="f1">
     <?php
     foreach ($paramList as $name => $value) {
       echo '<input type="hidden" name="' . $name . '" value="' . $value . '">';

@@ -103,10 +103,39 @@
                   <label class="form-label">Name</label>
                   <input name="name" type="text" value="<?php echo $user_data['name'] ?>" class="form-control shadow-none" required>
                 </div>
-                <div class="col-md-6 mb-3">
+                <!-- <div class="col-md-6 mb-3">
                   <label class="form-label">Phone Number</label>
-                  <input name="phonenum" type="number" value="<?php echo $user_data['phonenum'] ?>" class="form-control shadow-none" required>
+                  <input name="phonenum" type="number" value="<?php //echo $user_data['phonenum'] ?>" class="form-control shadow-none" required>
+                </div> -->
+                
+                <div class="col-md-6 mb-3">
+                <label class="form-label">Phone Number</label>
+                <input name="phonenum" id="phonenum" type="number" value="<?php echo $user_data['phonenum'] ?>" class="form-control shadow-none" required>
+                <div id="phone-error" style="color: black;" class="invalid-feedback">Please enter a valid phone number with 10 digits.</div>
                 </div>
+
+                <script>
+                  function validatePhoneNumber() {
+                    var phoneNumberInput = document.getElementById('phonenum');
+                    var phoneNumber = phoneNumberInput.value.replace(/\D/g, ''); // Remove non-numeric characters
+                    var phoneError = document.getElementById('phone-error');
+                    
+                    if (phoneNumber.length !== 10) {
+                        phoneNumberInput.setCustomValidity(''); // Reset any existing validation message
+                        phoneError.style.display = 'block'; // Show error message
+                        return false;
+                    } else {
+                        phoneNumberInput.setCustomValidity(''); // Reset any existing validation message
+                        phoneError.style.display = 'none'; // Hide error message
+                        return true;
+                    }
+                  }
+
+                  // Event listener for input change
+                  document.getElementById('phonenum').addEventListener('input', validatePhoneNumber);
+                </script>
+              
+
                 <div class="col-md-12 mb-3">
                   <label class="form-label">Address</label>
                   <textarea name="address" class="form-control shadow-none" rows="1" required><?php echo $user_data['address'] ?></textarea>

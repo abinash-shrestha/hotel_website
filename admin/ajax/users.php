@@ -47,10 +47,8 @@ if (isset($_POST['get_users'])) {
           <td>$row[phonenum]</td>
           <td>$row[address] | $row[pincode]</td>
           <td>$row[dob]</td>
-          <td>$verified</td>
           <td>$status</td>
           <td>$date</td>
-          <td>$del_btn</td>
         </tr>
       ";
     $i++;

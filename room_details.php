@@ -108,7 +108,7 @@
 
             echo <<<rating
                 <div class="mb-3">
-                  $rating_data
+                  
                 </div>
               rating;
 

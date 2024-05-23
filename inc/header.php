@@ -1,7 +1,7 @@
 <nav id="nav-bar" class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
   <div class="container-fluid">
     <div>
-      <a class="me-1 fw-bold fs-3 h-font" href="index.php" ><img src="images/about/logo.png" alt="logo" height="60px" width="60px"></a>
+      <a class="me-1 fw-bold fs-3 h-font" href="index.php"><img src="images/about/logo.png" alt="logo" height="60px" width="60px"></a>
     </div>
     <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.php"><?php echo $settings_r['site_title'] ?></a>
     <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,16 +104,47 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label class="form-label">Name</label>
-                <input name="name" type="text" class="form-control shadow-none" required>
+                <input name="name" type="text" class="form-control shadow-none" required pattern="[A-Za-z]+">
+                <div class="invalid-feedback">
+                  Please enter a valid name containing letters only.
+                </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label class="form-label">Email</label>
                 <input name="email" type="email" class="form-control shadow-none" required>
               </div>
-              <div class="col-md-6 mb-3">
+              <!-- <div class="col-md-6 mb-3">
                 <label class="form-label">Phone Number</label>
-                <input name="phonenum" type="number" class="form-control shadow-none" required>
-              </div>
+                <input name="phonenum" type="number" class="form-control shadow-none"  pattern="\d{10}" title="please enter 10 digits number only" required>
+              </div> -->
+
+                    <div class="col-md-6 mb-3">
+                <label class="form-label">Phone Number</label>
+                <input name="phonenum" id="phonenum" type="number" class="form-control shadow-none" required>
+                <div id="phone-error" style="color: black;" class="invalid-feedback">Please enter a valid phone number with 10 digits.</div>
+                </div>
+
+                <script>
+                  function validatePhoneNumber() {
+                    var phoneNumberInput = document.getElementById('phonenum');
+                    var phoneNumber = phoneNumberInput.value.replace(/\D/g, ''); // Remove non-numeric characters
+                    var phoneError = document.getElementById('phone-error');
+                    
+                    if (phoneNumber.length !== 10) {
+                        phoneNumberInput.setCustomValidity(''); // Reset any existing validation message
+                        phoneError.style.display = 'block'; // Show error message
+                        return false;
+                    } else {
+                        phoneNumberInput.setCustomValidity(''); // Reset any existing validation message
+                        phoneError.style.display = 'none'; // Hide error message
+                        return true;
+                    }
+                  }
+
+                  // Event listener for input change
+                  document.getElementById('phonenum').addEventListener('input', validatePhoneNumber);
+                </script>
+
               <div class="col-md-6 mb-3">
                 <label class="form-label">Picture</label>
                 <input name="profile" type="file" accept=".jpg, .jpeg, .png, .webp" class="form-control shadow-none" required>
@@ -132,11 +163,11 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label class="form-label">Password</label>
-                <input name="pass" type="password" class="form-control shadow-none" required>
+                <input name="pass" type="password" class="form-control shadow-none" required required minlength="8">
               </div>
               <div class="col-md-6 mb-3">
                 <label class="form-label">Confirm Password</label>
-                <input name="cpass" type="password" class="form-control shadow-none" required>
+                <input name="cpass" type="password" class="form-control shadow-none" required required minlength="8">
               </div>
             </div>
           </div>
@@ -160,7 +191,7 @@
         </div>
         <div class="modal-body">
           <span class="badge rounded-pill bg-light text-dark mb-3 text-wrap lh-base">
-            Note: A link will be sent to your email to reset your password!
+           
           </span>
           <div class="mb-4">
             <label class="form-label">Email</label>

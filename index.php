@@ -35,7 +35,7 @@
       <div class="swiper-wrapper">
 
         <div class="swiper-slide">
-          <img src="images/carousel/IMG_53376.jpeg" class="w-100 d-block">
+          <img src="images/carousel/hostel_front.jpg" class="w-100 d-block">
         </div>
        
       </div>
